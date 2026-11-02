@@ -1,0 +1,245 @@
+    /* ===== GERAL ===== */
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background-color: #f4f6f8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+
+    /* Cartão branco: cada tela pode mudar o max-width */
+    .menu-container {
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 800px;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        color: #2c3e50;
+        font-size: 24px;
+        margin: 0 0 30px;
+        text-align: center;
+    }
+
+    /* ===== CAMPOS ===== */
+    label {
+        display: block;
+        color: #34495e;
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="date"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box;
+        font-size: 14px;
+        font-family: inherit;
+        background-color: #fff;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+        outline: none;
+        border-color: #4a90e2;
+        box-shadow: 0 0 4px rgba(74, 144, 226, 0.4);
+    }
+
+    input[readonly] {
+        background-color: #f4f6f8;
+        color: #7f8c8d;
+    }
+
+    textarea {
+        min-height: 80px;
+        resize: vertical;
+    }
+
+    /* Campo sozinho */
+    .campo {
+        margin-bottom: 16px;
+    }
+
+    /* Campos lado a lado (empilham no celular) */
+    .linha {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 16px;
+    }
+
+    .linha .campo {
+        flex: 1;
+        min-width: 0;
+        margin-bottom: 0;
+    }
+
+    /* Opções (radio): Funcional / Não funcional, Admin / User */
+    fieldset {
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    legend {
+        color: #34495e;
+        font-size: 14px;
+        padding: 0;
+        margin-bottom: 6px;
+    }
+
+    .opcoes {
+        display: flex;
+        gap: 20px;
+        padding-top: 6px;
+    }
+
+    .opcoes label {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    /* ===== BOTÕES ===== */
+
+    /* Principal (azul) */
+    button {
+        padding: 10px 16px;
+        background-color: #4a90e2;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 15px;
+        font-family: inherit;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+    button:hover {
+        background-color: #357abd;
+    }
+
+    button:focus-visible {
+        outline: 2px solid #2c3e50;
+        outline-offset: 2px;
+    }
+
+    /* De contorno: serve para <button> e para <a> */
+    .secundario {
+        display: inline-block;
+        padding: 10px 16px;
+        background-color: #fff;
+        color: #2c3e50;
+        border: 1px solid #d5dbe1;
+        border-radius: 6px;
+        font-size: 15px;
+        font-family: inherit;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.2s, border-color 0.2s;
+    }
+
+    .secundario:hover {
+        background-color: #e8f0fb;
+        border-color: #4a90e2;
+    }
+
+    /* Excluir: usar junto com .secundario */
+    .perigo {
+        color: #c0392b;
+        border-color: #e6b0aa;
+    }
+
+    .perigo:hover {
+        background-color: #fdecea;
+        border-color: #c0392b;
+    }
+
+    /* Linha com um botão à esquerda e outro à direita */
+    .linha-botoes {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 16px;
+    }
+
+    .linha-botoes.topo {
+        margin: 0 0 24px;
+    }
+
+    .linha-botoes.rodape {
+        margin-top: 24px;
+    }
+
+    /* ===== TABELA ===== */
+
+    /* Rolagem própria para a tabela não estourar a tela de 350px */
+    .tabela-rolagem {
+        overflow-x: auto;
+        border: 1px solid #d5dbe1;
+        border-radius: 6px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+        min-width: 520px;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #e5e9ed;
+    }
+
+    th {
+        background-color: #f4f6f8;
+        color: #2c3e50;
+        font-weight: 600;
+    }
+
+    tbody tr:hover {
+        background-color: #e8f0fb;
+    }
+
+    tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .vazio {
+        text-align: center;
+        color: #7f8c8d;
+        padding: 24px;
+    }
+
+    /* ===== CELULAR (a partir de 350px) ===== */
+    @media (max-width: 600px) {
+        .menu-container {
+            padding: 24px 16px;
+        }
+
+        .linha {
+            flex-direction: column;
+            gap: 16px;
+        }
+    }
+
